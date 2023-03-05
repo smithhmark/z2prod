@@ -16,3 +16,6 @@ audit:
 # measure test coverage
 coverage:
     cargo tarpaulin --ignore-tests
+
+test:
+    cargo test
