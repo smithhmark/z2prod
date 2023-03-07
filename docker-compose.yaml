@@ -8,11 +8,13 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=newsletter
     ports:
-      - 5433:5432
-    command: "postgres -c max_connections=1000"
+      - 5432:5432
+    command: "postgres -N 1000"
 
   adminer:
     image: adminer
     restart: always
+    environment:
+      - ADMINER_DEFAULT_SERVER=postgres
     ports:
       - 3000:8080
